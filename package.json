@@ -1,0 +1,11 @@
+{
+  "name": "hadist",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/juji/hadist",
+  "author": "jujiyangasli@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "algoliasearch": "^4.11.0"
+  }
+}
