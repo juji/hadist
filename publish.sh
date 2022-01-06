@@ -7,7 +7,13 @@
 
 set -e
 
+git checkout master || true
 rm -rf /tmp/osfah || true
+
+if [ ! -d "frontend/out/" ]; then
+  yarn build
+fi
+
 mv frontend/out/ /tmp/osfah/
 
 git checkout gh-pages || git branch gh-pages && git checkout gh-pages
@@ -21,3 +27,5 @@ git add -A
 git commit -am $1
 
 git push origin gh-pages
+
+git checkout master
