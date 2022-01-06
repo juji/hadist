@@ -30,11 +30,13 @@ export default function ImamNum({
 
   return <>
     <NextSeo
-      title={`Hadist: ${source}, ${number}`}
+      title={`HR ${source}, ${number} | OSFAH`}
       description={id}
     />
     <Content>
       <Container itemscope itemtype ="https://schema.org/TextDigitalDocument">
+
+        <h1>HR {source}, {number}</h1>
 
         <div itemprop="mainEntity" inLanguage="ar-SA" className="arabic arab">
           {arab}

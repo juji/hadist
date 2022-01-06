@@ -23,7 +23,7 @@ const Container = styled.div`
 export default function Imam({ name, slug, length }) {
   return <>
   <NextSeo
-    title={`HR ${name}: ${length} hadist`}
+    title={`HR ${name}: ${length} hadist | OSFAH`}
     description={`${length} hadist dari HR ${name}`}
   />
   <div>
