@@ -21,7 +21,7 @@ git checkout gh-pages || true
 git pull origin gh-pages || true
 
 ls -A | grep -v .git | xargs rm -rf
-rm .gitignore
+rm .gitignore || true
 
 ls -A /tmp/osfah | xargs -I {} mv /tmp/osfah/{} "$PWD/"
 rm -rf /tmp/osfah
