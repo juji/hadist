@@ -6,7 +6,7 @@ OSFAH: It sounds arabic, but it's not.. I just made that up
 
 ---
 
-Just getting tired of searching Hadist in the wild... i'll just make my own.
+Just getting tired of searching Hadits in the wild... i'll just make my own.
 
 This is a search app for hadits.
 
