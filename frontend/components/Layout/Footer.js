@@ -1,7 +1,7 @@
 
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
-
+import getConfig from 'next/config'
 import Content from './Content'
 
 const Container = styled.div`
@@ -24,18 +24,18 @@ const Container = styled.div`
 
 export default function Header(){
 
+  const { publicRuntimeConfig } = getConfig()
+
   return <Container>
     <Content>
       <div>
         Open Hadist Search | <a href="https://github.com/juji/open-hadist-search"
         target="_blank"
-        rel="noopener noreferrer">Github</a> | <a href="https://www.npmjs.com/package/open-hadist-search"
-        target="_blank"
-        rel="noopener noreferrer">NPM</a>
+        rel="noopener noreferrer">Github</a>
       </div>
       <div>
         <a
-          href="https://github.com/sutanlab/hadith-api"
+          href={publicRuntimeConfig.DATA_REPO_URL}
           target="_blank"
           rel="noopener noreferrer"
           >data source</a>

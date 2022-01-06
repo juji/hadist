@@ -14,8 +14,11 @@ cp -R frontend/public.stock frontend/public
 yarn createSitemaps
 
 cd frontend
-echo "adding GOOGLE_CSE env vars"
+echo "adding env vars"
 echo "GOOGLE_CSE=$GOOGLE_CSE" > .env.local
+echo "DATA_REPO_URL=$DATA_REPO_URL" >> .env.local
+
+exit
 
 yarn
 

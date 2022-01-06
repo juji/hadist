@@ -12,5 +12,6 @@ module.exports = {
   },
   publicRuntimeConfig: {
     GOOGLE_CSE: process.env.GOOGLE_CSE,
+    DATA_REPO_URL: process.env.DATA_REPO_URL
   }
 }

@@ -13,6 +13,8 @@ This is a hadist search webapp.
 
 ## Steps to build
 
+Assuming this is your repo:
+
 1. prepare a domain name for github page
 2. prepare Google CSE
 2. Modify `.env` to your liking
@@ -22,4 +24,4 @@ This is a hadist search webapp.
 
 - the build command works on Mac, probably also work on bash (i haven't check)
 - pull requests are welcome for modifications that benefits all
-- a fork is recommended for those who want to modify the source for personal/organizational needs (like adding a brand)
+- a fork is recommended for those who want to modify the source for personal/organizational needs: like adding a brand, or using your own domain
