@@ -50,12 +50,12 @@ const sourceDir = path.resolve(
     console.log(`${sourceSlug}/${data.number}`)
 
     await fs.mkdir(
-      path.resolve(__dirname, '../frontend/out', sourceSlug, data.number),
+      path.resolve(__dirname, '../frontend/out/imam', sourceSlug, data.number+''),
       { recursive: true }
     )
 
     await fs.writeFile(
-      path.resolve(__dirname, '../frontend/out', sourceSlug, `${data.number}/index.html`),
+      path.resolve(__dirname, '../frontend/out/imam', sourceSlug, `${data.number}/index.html`),
       template(data)
     )
 

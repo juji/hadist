@@ -6,3 +6,6 @@ node_modules
 .DS_Store
 yarn.*
 yarn-error.log
+
+/frontend/lib/books
+/frontend/lib/data.json

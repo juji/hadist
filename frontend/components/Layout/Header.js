@@ -69,15 +69,14 @@ export default function Header(){
       <div className="gcse-search"></div>
     </Content>
   </Container>
-  <Nav>
+  { router.pathname === '/' ? null : <Nav>
     <Content>
-
     <span>
       <a onClick={back}>◀ back</a>&nbsp;|&nbsp;
       <a href="/">Home</a>
     </span>
     </Content>
-  </Nav>
+  </Nav>}
 </>
 
 }

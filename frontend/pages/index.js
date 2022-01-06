@@ -11,8 +11,6 @@ export default function Home() {
       <p>
         Cari hadist dengan mengisi kata kunci pada isian diatas
       </p>
-
-      <br />
       <br />
 
       <h4>Hadist yang tersedia:</h4>

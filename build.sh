@@ -9,7 +9,12 @@ rm -rf $DATA_DIR
 git clone $DATA_REPO $DATA_DIR
 
 echo "creating index"
+rm -rf frontend/lib/data.json
 yarn createIndex
+
+echo "copying data"
+rm -rf frontend/lib/books
+cp -R "$DATA_DIR/books" frontend/lib/books
 
 echo "creating sitemaps"
 rm -rf frontend/public
@@ -31,10 +36,9 @@ touch out/CNAME
 echo "$APP_DOMAIN" > out/CNAME
 
 cd ..
-# echo "creating pages"
-# yarn createPages
-# rm frontend/out/template.html
-# rm -rf frontend/public
+#echo "creating pages"
+#yarn createPages
+# rm -rf frontend/out/template
 
-echo "Publishing to ghpages"
-yarn ghpages
+# echo "Publishing to ghpages"
+# yarn ghpages
