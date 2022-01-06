@@ -1,4 +1,8 @@
-# Open Hadist Search
+# OSFAH v0.0.1
+
+Open Search For Al-Hadits v0.0.1
+
+It sounds arabic, but it's not.. I just made that up..
 
 Just getting tired of searching Hadist in the wild... i'll just make my own..
 

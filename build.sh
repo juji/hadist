@@ -35,8 +35,3 @@ yarn export
 touch "out/.nojekyll"
 touch "out/CNAME"
 echo "$APP_DOMAIN" > out/CNAME
-
-cd ..
-
-echo "Publishing to ghpages"
-yarn ghpages
