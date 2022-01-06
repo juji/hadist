@@ -1,8 +1,6 @@
 
 const path = require('path')
 
-console.log(process.env)
-
 module.exports = {
   eslint: {
     // Warning: This allows production builds to successfully complete even if
