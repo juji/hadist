@@ -18,7 +18,7 @@
     "dev": "set -a && . .env && ./prepare.sh && cd frontend && yarn dev",
     "createSitemaps": "set -a && . .env && node maintenance/createSitemaps.js",
     "createIndex": "rm -rf frontend/lib/data.json; set -a && . .env && node maintenance/createIndex.js",
-    "ghpages": "gh-pages -t -d frontend/out",
+    "ghpages": "./publish.sh",
     "serve": "http-server ./frontend/out -d false"
   }
 }
