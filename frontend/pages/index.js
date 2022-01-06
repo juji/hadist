@@ -6,10 +6,11 @@ import Link from 'next/link'
 export default function Home() {
   return <div>
     <Content>
-      <h1>Open Hadist Search</h1>
+      <h1 style={{marginBottom: 0}}>OSFAH v0.0.1</h1>
+      <p style={{marginTop: 0}}>Open Search For Al-Hadits v0.0.1</p>
 
       <p>
-        Cari hadits dengan mengisi kata kunci pada isian diatas
+        <small>Cari hadits dengan mengisi kata kunci pada isian diatas</small>
       </p>
       <br />
 

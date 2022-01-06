@@ -43,7 +43,6 @@ const Nav = styled.nav`
 export default function Header(){
 
   const { publicRuntimeConfig } = getConfig()
-  // console.log('publicRuntimeConfig', publicRuntimeConfig)
 
   useEffect(() => {
 

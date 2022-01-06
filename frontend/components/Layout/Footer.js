@@ -29,7 +29,7 @@ export default function Header(){
   return <Container>
     <Content>
       <div>
-        Open Hadist Search | <a href="https://github.com/juji/open-hadist-search"
+        OSFAH v0.0.1 | <a href="https://github.com/juji/open-hadist-search"
         target="_blank"
         rel="noopener noreferrer">Github</a>
       </div>

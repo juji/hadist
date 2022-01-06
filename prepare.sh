@@ -27,13 +27,3 @@ echo "GOOGLE_CSE=$GOOGLE_CSE" > .env.local
 echo "DATA_REPO_URL=$DATA_REPO_URL" >> .env.local
 
 yarn
-
-echo "building ..."
-yarn build
-yarn export
-
-touch "out/.nojekyll"
-touch "out/CNAME"
-echo "$APP_DOMAIN" > out/CNAME
-
-cd ..
