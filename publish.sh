@@ -8,14 +8,20 @@
 set -e
 
 git checkout master || true
-rm -rf /tmp/osfah || true
 
 if [ ! -d "frontend/out/" ]; then
   yarn build
 fi
 
+rm -rf /tmp/osfah || true
 mv frontend/out/ /tmp/osfah/
 
+rm -rf /tmp/osfah-repo || true
+git clone "$(git config --get remote.origin.url)" /tmp/osfah-repo
+
+DIR="$PWD"
+
+cd /tmp/osfah-repo
 git checkout gh-pages || git branch gh-pages
 git checkout gh-pages || true
 git pull origin gh-pages || true
@@ -30,4 +36,5 @@ git add -A; git commit -am 'publish gh-pages'
 
 git push origin gh-pages
 
-git checkout master
+cd $PWD
+rm -rf /tmp/osfah-repo || true
