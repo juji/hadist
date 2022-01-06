@@ -38,7 +38,7 @@ export default function Header(){
           href={publicRuntimeConfig.DATA_REPO_URL}
           target="_blank"
           rel="noopener noreferrer"
-          >data source</a>
+          >Sumber data</a>
       </div>
     </Content>
   </Container>

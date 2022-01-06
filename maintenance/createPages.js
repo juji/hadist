@@ -18,11 +18,9 @@ const sourceDir = path.resolve(
 
   // load template
   const template = dot.template(await fs.readFile(
-    path.resolve(__dirname, '../frontend/out/template.html'),
+    path.resolve(__dirname, '../frontend/out/template/index.html'),
     { encoding: 'utf8' }
   ))
-
-
 
   // load data
   const books = await fs.readdir(sourceDir)
@@ -43,19 +41,6 @@ const sourceDir = path.resolve(
 
   },[])
 
-  // creating directory
-  const dirs = Object.keys(contents.reduce((a,b) => {
-    return {
-      ...a,
-      [b.sourceSlug]: 1
-    }
-  },{}))
-
-  await Promise.all(dirs.map(dir => fs.mkdir(
-    path.resolve(__dirname, '../frontend/out', dir),
-    { recursive: true }
-  )))
-
 
   // writing files
   await splitSequence(contents.map(v => async () => {
@@ -64,8 +49,13 @@ const sourceDir = path.resolve(
 
     console.log(`${sourceSlug}/${data.number}`)
 
+    await fs.mkdir(
+      path.resolve(__dirname, '../frontend/out', sourceSlug, data.number),
+      { recursive: true }
+    )
+
     await fs.writeFile(
-      path.resolve(__dirname, '../frontend/out', sourceSlug, `${data.number}.html`),
+      path.resolve(__dirname, '../frontend/out', sourceSlug, `${data.number}/index.html`),
       template(data)
     )
 

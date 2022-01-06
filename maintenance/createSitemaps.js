@@ -55,12 +55,20 @@ const sitemapContent = arr => {
 
   const contents = books.reduce((a,b) => {
 
+    const slug = b.split('.json')[0]
+
     return [
       ...a,
+      {
+        url: `${domain}/${slug}`,
+        priority: '0.9',
+        lastmod: '06-01-2022',
+        changefreq: 'monthly'
+      },
       ...(require(
         path.resolve(sourceDir, b)
       )).map(v => ({
-        url: `${domain}/${b.split('.json')[0]}/${v.number}`,
+        url: `${domain}/${slug}/${v.number}`,
         priority: '0.9',
         lastmod: '06-01-2022',
         changefreq: 'monthly'

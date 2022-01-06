@@ -15,11 +15,6 @@ const Container = styled.div`
     display: flex;
     align-items: center;
 
-    &>span{
-      flex: 0 0 auto;
-      margin-right: 21px;
-    }
-
     &>div{
       flex: 1 1 auto;
       .gsc-control-cse{
@@ -27,6 +22,19 @@ const Container = styled.div`
       }
     }
 
+  }
+
+`
+
+const Nav = styled.nav`
+
+  padding: 21px 0;
+
+  &>div{
+    &>span{
+      flex: 0 0 auto;
+      margin-right: 21px;
+    }
   }
 
 `
@@ -56,14 +64,20 @@ export default function Header(){
 
   const back = () => router.back()
 
-  return <Container>
+  return <><Container>
     <Content>
-      {router.pathname === '/' ? null : <span>
-        <a onClick={back}>◀ back</a>&nbsp;|&nbsp;
-        <a href="/">Home</a>
-      </span>}
       <div className="gcse-search"></div>
     </Content>
   </Container>
+  <Nav>
+    <Content>
+
+    <span>
+      <a onClick={back}>◀ back</a>&nbsp;|&nbsp;
+      <a href="/">Home</a>
+    </span>
+    </Content>
+  </Nav>
+</>
 
 }

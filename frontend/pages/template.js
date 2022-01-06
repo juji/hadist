@@ -36,7 +36,7 @@ export default function ExamplePage(){
     />
     <Content>
       <Container itemscope itemtype ="https://schema.org/TextDigitalDocument">
-      
+
         <div itemprop="citation" inLanguage="ar-SA" className="arabic arab">
           {data.arab}
         </div>
@@ -46,7 +46,7 @@ export default function ExamplePage(){
         </div>
 
         <div className="source-number">
-          ( <span itemprop="publisher">{data.source}</span>, {data.number} )
+          ( <span itemprop="publisher">HR {data.source}</span>, {data.number} )
         </div>
 
       </Container>

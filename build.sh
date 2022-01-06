@@ -6,6 +6,9 @@ yarn
 rm -rf $DATA_DIR
 rm -rf frontend/public
 
+echo "creating index"
+yarn createIndex
+
 echo "downloading data"
 git clone $DATA_REPO $DATA_DIR
 
@@ -20,7 +23,7 @@ echo "DATA_REPO_URL=$DATA_REPO_URL" >> .env.local
 
 yarn
 
-echo "building initial pages"
+echo "building initial doc pages"
 yarn build
 yarn export
 touch out/.nojekyll
@@ -28,10 +31,10 @@ touch out/CNAME
 echo "$APP_DOMAIN" > out/CNAME
 
 cd ..
-echo "creating pages"
-yarn createPages
-rm frontend/out/template.html
-rm -rf frontend/public
+# echo "creating pages"
+# yarn createPages
+# rm frontend/out/template.html
+# rm -rf frontend/public
 
 echo "Publishing to ghpages"
 yarn ghpages
