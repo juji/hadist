@@ -36,5 +36,5 @@ git add -A; git commit -am 'publish gh-pages'
 
 git push origin gh-pages
 
-cd $PWD
+cd "$DIR"
 rm -rf /tmp/osfah-repo || true
