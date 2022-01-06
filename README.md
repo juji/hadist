@@ -6,13 +6,13 @@ It sounds arabic, but it's not.. I just made that up..
 
 Just getting tired of searching Hadist in the wild... i'll just make my own..
 
-This is a hadist search webapp.
+This is a search app for hadits.
 
 - It's MIT
 - It uses Google custom search engine (now Programmable Search), so it's free.. but requires time to crawl.
 - It is published via github
 - It will be publish using a custom domain name, so you should have one prepared
-- You can modify the data-source, to use your own, as long as it has the same directory structure with the default
+- You can modify the data-source, to use your own, as long as it has the same directory and data structure with the default
 - The app it self is in Indonesian, and it uses Indonesian data.
 
 
