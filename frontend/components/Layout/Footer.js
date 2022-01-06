@@ -27,20 +27,18 @@ export default function Header(){
   return <Container>
     <Content>
       <div>
-        &copy; {new Date().getFullYear()} <a
-          href="https://jujiyangasli.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          >jujiyangasli.com</a>
+        Open Hadist Search | <a href="https://github.com/juji/open-hadist-search"
+        target="_blank"
+        rel="noopener noreferrer">Github</a> | <a href="https://www.npmjs.com/package/open-hadist-search"
+        target="_blank"
+        rel="noopener noreferrer">NPM</a>
       </div>
       <div>
-        source: <a
+        <a
           href="https://github.com/sutanlab/hadith-api"
           target="_blank"
           rel="noopener noreferrer"
-          >
-          https://github.com/sutanlab/hadith-api
-        </a>
+          >data source</a>
       </div>
     </Content>
   </Container>

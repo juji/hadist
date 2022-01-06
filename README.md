@@ -1,9 +1,24 @@
-# Hadist search engine
+# Open Hadist Search
 
-Just getting tired of searching Hadist in the wild... i'll just make my own..
+Just getting tired of searching Hadist in the wild...
 
-I'm not gonna be responsible for anything...
+I'll just make my own..
 
-use it at your own risk
+This is a hadist search webapp.
 
-source: https://github.com/sutanlab/hadith-api
+- You can publicly publish the app via github
+- It will publish using a custom domain name, so you should have one prepared
+- You can modify the source, to use your own, as long as it has the same directory structure with the default
+
+
+## Steps to build
+
+1. prepare a domain name for github page
+2. prepare Google CSE
+2. Modify `.env` to your liking
+3. `yarn build`
+
+## NOTES
+
+- the build command works on Mac, probably also work on bash (i haven't check)
+- pull requests are welcome

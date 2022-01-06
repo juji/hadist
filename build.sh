@@ -1,23 +1,23 @@
 #!/bin/bash
 
+# init, clean everything
 rm -rf $DATA_DIR
-rm -rf frontend/pages
 rm -rf frontend/public
 
 echo "downloading data"
 git clone $DATA_REPO $DATA_DIR
 
-cp -R frontend/public.stock frontend/public
 echo "creating sitemaps"
+cp -R frontend/public.stock frontend/public
 yarn createSitemaps
 
 cd frontend
 echo "adding GOOGLE_CSE env vars"
 echo "GOOGLE_CSE=$GOOGLE_CSE" > .env.local
 
-echo "building initial pages"
-cp -R pages.stock pages
+yarn
 
+echo "building initial pages"
 yarn build
 yarn export
 touch out/.nojekyll
@@ -28,5 +28,7 @@ cd ..
 echo "creating pages"
 yarn createPages
 rm frontend/out/template.html
+rm -rf frontend/public
 
-yarn publish
+echo "Publishing to ghpages"
+yarn ghpages
