@@ -6,6 +6,11 @@ import { NextSeo } from 'next-seo'
 
 const Container = styled.div`
 
+  h1{
+    margin-top: 0px;
+    margin-bottom: 55px;
+  }
+
   .arab{
     direction: rtl;
     margin-bottom: 34px;
