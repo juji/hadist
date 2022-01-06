@@ -18,8 +18,6 @@ echo "adding env vars"
 echo "GOOGLE_CSE=$GOOGLE_CSE" > .env.local
 echo "DATA_REPO_URL=$DATA_REPO_URL" >> .env.local
 
-exit
-
 yarn
 
 echo "building initial pages"
