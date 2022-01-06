@@ -1,0 +1,39 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.68em;
+}
+
+#__next{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  color: #3498db;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:visited{
+  color: #2980b9;
+}
+
+a:hover{
+  color: #2ecc71;
+}
+
+* {
+  box-sizing: border-box;
+  line-height: 1.68em;
+}
+
+.arabic{
+  font-family: 'Amiri', serif
+}

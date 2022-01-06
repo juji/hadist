@@ -1,1 +1,7 @@
 node_modules
+/source
+/frontend/.env.local
+/frontend/pages
+/frontend/public
+
+.DS_Store
