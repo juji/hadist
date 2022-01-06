@@ -16,6 +16,7 @@
     "build": "set -a && . .env && ./build.sh",
     "createPages": "set -a && . .env && node maintenance/createPages.js",
     "createSitemaps": "set -a && . .env && node maintenance/createSitemaps.js",
+    "createIndex": "set -a && . .env && node maintenance/createIndex.js",
     "ghpages": "gh-pages -t -d frontend/out"
   }
 }

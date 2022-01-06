@@ -3,16 +3,16 @@
 yarn
 
 # init, clean everything
+
+echo "downloading data"
 rm -rf $DATA_DIR
-rm -rf frontend/public
+git clone $DATA_REPO $DATA_DIR
 
 echo "creating index"
 yarn createIndex
 
-echo "downloading data"
-git clone $DATA_REPO $DATA_DIR
-
 echo "creating sitemaps"
+rm -rf frontend/public
 cp -R frontend/public.stock frontend/public
 yarn createSitemaps
 
