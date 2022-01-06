@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# i don't know why.. gut the ghpages package didn't work
+# i don't know why.. but the ghpages package didn't work,
+# something about open file
 
 # gh-pages -t -d frontend/out
 
