@@ -9,11 +9,11 @@ export default function Home() {
       <h1>Open Hadist Search</h1>
 
       <p>
-        Cari hadist dengan mengisi kata kunci pada isian diatas
+        Cari hadits dengan mengisi kata kunci pada isian diatas
       </p>
       <br />
 
-      <h4>Hadist yang tersedia:</h4>
+      <h4>Hadits yang tersedia:</h4>
       { Object.keys(data).map(v => {
 
         return <div key={v} className="hadist">
