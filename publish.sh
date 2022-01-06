@@ -7,16 +7,27 @@
 
 set -e
 
+git checkout master || true
+rm -rf /tmp/osfah || true
+
+if [ ! -d "frontend/out/" ]; then
+  yarn build
+fi
+
 mv frontend/out/ /tmp/osfah/
 
-git checkout gh-pages
-git pull origin gh-pages
+git checkout gh-pages || git branch gh-pages
+git checkout gh-pages || true
+git pull origin gh-pages || true
 
-ls | grep -v .git | xargs rm -rf
+ls -A | grep -v .git | xargs rm -rf
+rm .gitignore
 
-mv /tmp/osfah/* /tmp/osfah/.* .
+mv /tmp/osfah/ "$PWD/"
 
 git add -A
-git commit -am $1
+git commit -am 'publish gh-pages'
 
 git push origin gh-pages
+
+git checkout master
