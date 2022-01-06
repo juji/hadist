@@ -28,17 +28,15 @@ echo "DATA_REPO_URL=$DATA_REPO_URL" >> .env.local
 
 yarn
 
-echo "building initial doc pages"
+echo "building ..."
 yarn build
 yarn export
-touch out/.nojekyll
-touch out/CNAME
+
+touch "out/.nojekyll"
+touch "out/CNAME"
 echo "$APP_DOMAIN" > out/CNAME
 
 cd ..
-#echo "creating pages"
-#yarn createPages
-# rm -rf frontend/out/template
 
-# echo "Publishing to ghpages"
-# yarn ghpages
+echo "Publishing to ghpages"
+yarn ghpages
