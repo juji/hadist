@@ -7,10 +7,11 @@
 
 set -e
 
+rm -rf /tmp/osfah || true
 mv frontend/out/ /tmp/osfah/
 
-git checkout gh-pages
-git pull origin gh-pages
+git checkout gh-pages || git branch gh-pages && git checkout gh-pages
+git pull origin gh-pages || true
 
 ls | grep -v .git | xargs rm -rf
 
