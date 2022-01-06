@@ -20,12 +20,13 @@ git checkout gh-pages || git branch gh-pages
 git checkout gh-pages || true
 git pull origin gh-pages || true
 
-ls | grep -v .git | xargs rm -rf
+ls -A | grep -v .git | xargs rm -rf
+rm .gitignore
 
-mv /tmp/osfah/ ./
+ls -A /tmp/osfah | xargs -I {} mv /tmp/osfah/{} "$PWD/"
+rm -rf /tmp/osfah
 
-git add -A
-git commit -am 'publish gh-pages'
+git add -A; git commit -am 'publish gh-pages'
 
 git push origin gh-pages
 
