@@ -35,10 +35,12 @@ const Container = styled.div`
 export default function Header(){
 
   const { publicRuntimeConfig } = getConfig()
-  console.log(publicRuntimeConfig)
+  // console.log('publicRuntimeConfig', publicRuntimeConfig)
 
   useEffect(() => {
 
+    if(!publicRuntimeConfig.GOOGLE_CSE) return;
+    if(!process.browser) return;
 
     var cx = publicRuntimeConfig.GOOGLE_CSE;
     var gcse = document.createElement('script');
@@ -47,7 +49,8 @@ export default function Header(){
     gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(gcse, s);
-  },[])
+
+  },[ process.browser, publicRuntimeConfig.GOOGLE_CSE ])
 
   const router = useRouter()
 
@@ -59,7 +62,7 @@ export default function Header(){
         <a onClick={back}>◀ back</a>&nbsp;|&nbsp;
         <a href="/">Home</a>
       </span>}
-      <div class="gcse-search"></div>
+      <div className="gcse-search"></div>
     </Content>
   </Container>
 

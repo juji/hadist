@@ -9,8 +9,8 @@ import 'normalize.css'
 import 'styles/globals.css'
 
 const defSeo = {
-  title: 'Hadist Search Engine',
-  description: 'Hadist Search Engine, because i want to'
+  title: 'Open Hadist Search',
+  description: 'Open Hadist Search, because i want to'
 }
 
 function HadistApp({ Component, pageProps }) {

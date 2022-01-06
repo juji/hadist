@@ -1,5 +1,7 @@
 #!/bin/bash
 
+yarn
+
 # init, clean everything
 rm -rf $DATA_DIR
 rm -rf frontend/public

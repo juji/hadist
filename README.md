@@ -16,9 +16,10 @@ This is a hadist search webapp.
 1. prepare a domain name for github page
 2. prepare Google CSE
 2. Modify `.env` to your liking
-3. `yarn build`
+3. `yarn && yarn build`
 
 ## NOTES
 
 - the build command works on Mac, probably also work on bash (i haven't check)
-- pull requests are welcome
+- pull requests are welcome for modifications that benefits all
+- a fork is recommended for those who want to modify the source for personal/organizational needs (like adding a brand)

@@ -1,6 +1,8 @@
 
 const path = require('path')
 
+console.log(process.env)
+
 module.exports = {
   eslint: {
     // Warning: This allows production builds to successfully complete even if
@@ -11,6 +13,6 @@ module.exports = {
     webpack5: true,
   },
   publicRuntimeConfig: {
-    GOOLE_CSE: process.env.GOOLE_CSE,
+    GOOGLE_CSE: process.env.GOOGLE_CSE,
   }
 }
