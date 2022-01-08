@@ -9,32 +9,22 @@ set -e
 
 git checkout master || true
 
-if [ ! -d "frontend/out/" ]; then
-  yarn build
-fi
+rm -rf /tmp/osfah || true
+git clone "$(git config --get remote.origin.url)" /tmp/osfah
+
+git -C /tmp/osfah checkout gh-pages || git -C /tmp/osfah branch gh-pages
+git -C /tmp/osfah checkout gh-pages || true
+git -C /tmp/osfah pull origin gh-pages || true
+
+ls -A /tmp/osfah | grep -v .git | xargs -I {} rm -rf /tmp/osfah/{}
+rm /tmp/osfah/.gitignore || true
+
+if [ ! -d "frontend/out/" ]; then yarn build; fi
+ls -A frontend/out | xargs -I {} mv frontend/out/{} /tmp/osfah/
+rm -rf frontend/out
+
+git -C /tmp/osfah add -A;
+git -C /tmp/osfah commit -am 'publish gh-pages'
+git -C /tmp/osfah push origin gh-pages
 
 rm -rf /tmp/osfah || true
-mv frontend/out/ /tmp/osfah/
-
-rm -rf /tmp/osfah-repo || true
-git clone "$(git config --get remote.origin.url)" /tmp/osfah-repo
-
-DIR="$PWD"
-
-cd /tmp/osfah-repo
-git checkout gh-pages || git branch gh-pages
-git checkout gh-pages || true
-git pull origin gh-pages || true
-
-ls -A | grep -v .git | xargs rm -rf
-rm .gitignore || true
-
-ls -A /tmp/osfah | xargs -I {} mv /tmp/osfah/{} "$PWD/"
-rm -rf /tmp/osfah
-
-git add -A; git commit -am 'publish gh-pages'
-
-git push origin gh-pages
-
-cd "$DIR"
-rm -rf /tmp/osfah-repo || true
