@@ -1,6 +1,5 @@
 require('./init')
 
-const SiteMapStreamer = require('lib/SiteMapStreamer')
 const fs = require('fs/promises')
 const path = require('path')
 const { headerCase } = require("header-case");
@@ -8,6 +7,7 @@ const { headerCase } = require("header-case");
 const MAXROW = 5000
 const domain = `https://${process.env.APP_DOMAIN}`
 const dataDir = process.env.DATA_DIR
+const lastm = new Date().toISOString().split('T')[0]
 
 const sourceDir = path.resolve(
   __dirname,
@@ -37,7 +37,7 @@ const sitemapContent = arr => {
     <url>
       <loc>${v.url}</loc>
       <priority>${v.priority||'0.9'}</priority>
-      <lastmod>${v.lastmod}</lastmod>
+      <lastmod>${lastm}</lastmod>
       <changefreq>${v.changefreq}</changefreq>
     </url>`).join('')
 
@@ -62,7 +62,6 @@ const sitemapContent = arr => {
       {
         url: `${domain}/${slug}`,
         priority: '0.9',
-        lastmod: '06-01-2022',
         changefreq: 'monthly'
       },
       ...(require(
@@ -70,7 +69,6 @@ const sitemapContent = arr => {
       )).map(v => ({
         url: `${domain}/${slug}/${v.number}`,
         priority: '0.9',
-        lastmod: '06-01-2022',
         changefreq: 'monthly'
       }))
     ]
@@ -78,7 +76,6 @@ const sitemapContent = arr => {
   },[{
     url: `${domain}`,
     priority: '1',
-    lastmod: '06-01-2022',
     changefreq: 'monthly'
   }])
 
