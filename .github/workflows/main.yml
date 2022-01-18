@@ -51,9 +51,9 @@ jobs:
 
       - name: create sitemap
         run: |
-          rm -rf frontend/public
+          rm -rf frontend/public||true
           cp -R frontend/public.stock frontend/public
-          yarn createSitemaps
+          node maintenance/createSitemaps.js
 
 
       # Runs a set of commands using the runners shell
