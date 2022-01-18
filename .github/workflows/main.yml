@@ -46,9 +46,18 @@ jobs:
         run: |
           rm -rf frontend/lib/data.json||true
           node maintenance/createIndex.js
+          rm -rf frontend/lib/books||true
+          cp -R "$DATA_DIR/books" frontend/lib/books
+
+      - name: create sitemap
+        run: |
+          rm -rf frontend/public
+          cp -R frontend/public.stock frontend/public
+          yarn createSitemaps
 
 
       # Runs a set of commands using the runners shell
       - name: check
         run: |
           ls -la frontend/lib
+          ls -la frontend/public
