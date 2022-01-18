@@ -15,11 +15,10 @@
   },
   "scripts": {
     "postinstall": "cd frontend; yarn",
-    "build": "set -a && . .env && ./build.sh",
+    "prepare": "set -a && . .env && ./prepare.sh",
+    "build": "set -a && . .env && ./prepare.sh && ./build.sh",
     "dev": "set -a && . .env && ./prepare.sh && cd frontend && yarn dev",
-    "createSitemaps": "set -a && . .env && node maintenance/createSitemaps.js",
-    "createIndex": "rm -rf frontend/lib/data.json; set -a && . .env && node maintenance/createIndex.js",
-    "ghpages": "./publish.sh",
+    "pages": "./publish.sh",
     "serve": "http-server ./frontend/out -d false"
   }
 }
