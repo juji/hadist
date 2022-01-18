@@ -60,14 +60,14 @@ const sitemapContent = arr => {
     return [
       ...a,
       {
-        url: `${domain}/${slug}`,
+        url: `${domain}/imam/${slug}`,
         priority: '0.9',
         changefreq: 'monthly'
       },
       ...(require(
         path.resolve(sourceDir, b)
       )).map(v => ({
-        url: `${domain}/${slug}/${v.number}`,
+        url: `${domain}/imam/${slug}/${v.number}`,
         priority: '0.9',
         changefreq: 'monthly'
       }))
