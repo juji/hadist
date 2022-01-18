@@ -62,3 +62,18 @@ jobs:
           ls -la frontend/lib
           ls -la frontend/lib/books
           ls -la frontend/public
+
+      - name: export
+        run: |
+          cd frontend
+          echo "adding env vars"
+          echo "GOOGLE_CSE=$GOOGLE_CSE" > .env.local
+          echo "DATA_REPO_URL=$DATA_REPO_URL" >> .env.local
+          echo "building ..."
+          yarn build
+          yarn export
+          touch "out/.nojekyll"
+          touch "out/CNAME"
+          echo "$APP_DOMAIN" > out/CNAME
+
+          ls -la out
