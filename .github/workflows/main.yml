@@ -60,4 +60,5 @@ jobs:
       - name: check
         run: |
           ls -la frontend/lib
+          ls -la frontend/lib/books
           ls -la frontend/public
