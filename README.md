@@ -1,4 +1,6 @@
-# OSFAH v0.0.1
+# This is no longer an active project, there are lots of options out there, better ones
+
+## OSFAH v0.0.1
 
 Open Search For Al-Hadits v0.0.1
 
